@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  mysqldb:
+    image: mysql:8
+    networks:
+      - package_service_network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=packagedb
+      - MYSQL_PASSWORD=root
+    ports:
+      - 3306:3306
+networks:
+  package_service_network:
+    external:
+      name: package_service_network

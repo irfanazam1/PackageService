@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  packageservice:
+    image: packageservice
+    build: ../.
+    ports:
+      - 8080:8080
+      - 8088:8088
+    networks:
+      - package_service_network
+    volumes:
+      - ../target/:/output:rw
+      - ../target/:/var/log/pakcageservice:rw
+    restart: on-failure
+    entrypoint: "java -agentlib:jdwp=transport=dt_socket,address=8088,server=y,suspend=n -jar /output/packageservice-1.0-SNAPSHOT.jar"
+networks:
+  package_service_network:
+    external:
+      name: package_service_network
