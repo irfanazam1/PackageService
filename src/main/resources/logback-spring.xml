@@ -25,7 +25,7 @@
         </rollingPolicy>
     </appender>
 
-    <logger name="com.ciklum" level="debug" additivity="false">
+    <logger name="com.mrs" level="debug" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>
