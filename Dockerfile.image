@@ -1,0 +1,4 @@
+FROM openjdk:17-alpine
+RUN mkdir -p /output
+COPY ./target/packageservice-1.0-SNAPSHOT.jar /output
+ENTRYPOINT ["java","-jar","/output/packageservice-1.0-SNAPSHOT.jar"]
