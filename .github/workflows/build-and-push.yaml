@@ -9,11 +9,13 @@ jobs:
   docker-build-push:
     runs-on: ubuntu-latest
     steps:
-      - name: java-build
+      - name: setup-java-build
         uses: actions/checkout@v3
         with:
           java-version: '17'
           distribution: 'adopt'
+
+      - name: java-maven-build
         run: mvn --batch-mode --update-snapshots package
 
       - name: Set up QEMU
