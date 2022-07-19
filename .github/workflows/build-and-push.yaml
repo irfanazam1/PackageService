@@ -17,7 +17,10 @@ jobs:
           distribution: 'adopt'
 
       - name: java-maven-build
-        run: mvn --batch-mode --update-snapshots package
+        run: mvn package clean package
+
+      - name: copy-output
+        run:  cp /home/runner/work/PackageService/PackageService/target/*.jar /home/packageservice.jar
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
