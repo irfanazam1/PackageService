@@ -1,4 +1,4 @@
 FROM openjdk:17-alpine
 MAINTAINER irfanazam1@github.com
-COPY target/packageservice-1.0-SNAPSHOT.jar packageservice-1.0-SNAPSHOT.jar
+COPY target/packageservice-1.0-SNAPSHOT.jar /packageservice-1.0-SNAPSHOT.jar
 ENTRYPOINT ["java","-jar","/packageservice-1.0.0-SNAPSHOT.jar"]
