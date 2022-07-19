@@ -20,7 +20,7 @@ jobs:
         run: mvn package clean package
 
       - name: copy-output
-        run:  cp /home/runner/work/PackageService/PackageService/target/*.jar /home/packageservice.jar
+        run:  sudo cp /home/runner/work/PackageService/PackageService/target/*.jar /home/packageservice.jar
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
