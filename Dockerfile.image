@@ -1,4 +1,4 @@
 FROM openjdk:17-alpine
 MAINTAINER irfanazam1@github.com
-COPY /home/runner/work/PackageService/PackageService/target/*.jar /
-ENTRYPOINT ["java","-jar","/packageservice-1.0-SNAPSHOT.jar"]
+ADD target/packageservice*.jar /home/packageservice.jar
+CMD ["java","-jar","/home/packageservice.jar"]
