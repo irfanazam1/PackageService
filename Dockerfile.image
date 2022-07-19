@@ -1,4 +1,4 @@
 FROM openjdk:17-alpine
-RUN mkdir /output
-RUN cp /home/runner/work/PackageService/PackageService/target/packageservice-1.0-SNAPSHOT.jar /output
-ENTRYPOINT ["java","-jar","/output/packageservice-1.0-SNAPSHOT.jar"]
+MAINTAINER irfanazam1@github.com
+COPY target/packageservice-1.0-SNAPSHOT.jar packageservice-1.0-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/packageservice-1.0.0-SNAPSHOT.jar"]
