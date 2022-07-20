@@ -16,11 +16,9 @@ spec:
     spec:
       containers:
         - name: packageservice
-          image: irfanazam1/packageservice:ce80643
+          image: irfanazam1/packageservice:8bef71e
           ports:
             - containerPort: 8080
-      hostNetwork: true
-      dnsPolicy: Default
 ---
 apiVersion: v1
 kind: Service
