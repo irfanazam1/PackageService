@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: packageservice-deployment
+  labels:
+     app: packageservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: packageservice
+  template:
+    metadata:
+      labels:
+        app: packageservice
+    spec:
+      containers:
+        - name: packageservice
+          image: irfanazam1/packageservice:7417050
+          ports:
+            - containerPort: 8080
+      hostNetwork: true
+      dnsPolicy: Default
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: packageservice
+  labels:
+    app: packageservice
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: packageservice
+  type: LoadBalancer
