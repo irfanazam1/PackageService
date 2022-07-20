@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: packageservice
-          image: irfanazam1/packageservice:7417050
+          image: irfanazam1/packageservice:ce80643
           ports:
             - containerPort: 8080
       hostNetwork: true

@@ -19,7 +19,6 @@ spec:
           image:  mysql:8
           ports:
             - containerPort: 3306
-              name: mysqldb
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: "root"
@@ -45,6 +44,7 @@ spec:
   ports:
     - port: 3306
       protocol: TCP
+      targetPort: 3306
   selector:
     app: mysqldb
   type: LoadBalancer
