@@ -90,3 +90,5 @@ docker-compose up
 - Sometimes the service generates an exception when the database does not start before the service.
 - This can be fixed by writing a script which can synchronize the service and database starts.
 - Or database and service run via a different docker-compose.yml
+
+test
